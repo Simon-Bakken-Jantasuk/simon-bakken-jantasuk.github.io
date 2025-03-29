@@ -10,10 +10,8 @@
     <div class="image-container"> 
       <img id="randomimage" src="./images/elon0.png" title="random image of elon musk">
     </div>
-    <div class="pdf-container">
-      <iframe src="./resume.pdf"></iframe>
-      <a href="./resume.pdf" id="downloadLink" style="display: none;" download>Download Resume</a>
-      <script>
+    <a href="./resume.pdf">Resume</a>
+    <script>
         const imgel = document.queryselector("#randomimage");
 
         const images = [
@@ -29,26 +27,6 @@
         }
 
         setinterval(changeimage, 1 * 10**3)
-
-        const adjustContent = () => {
-          const pdfContainer = document.getElementById("pdfContainer");
-          const pdfIframe = document.getElementById("pdfIframe");
-          const downloadLink = document.getElementById("downloadLink");
-
-          if (window.innerWidth < 768) { // Mobile view
-            pdfContainer.style.flexDirection = "column";
-            pdfIframe.style.display = "none"; 
-            downloadLink.style.display = "block"; 
-          } else { 
-            pdfContainer.style.flexDirection = "row";
-            pdfIframe.style.display = "block"; 
-            downloadLink.style.display = "none"; 
-          }
-        }
-
-        adjustContent();
-
-        window.addEventListener('resize', adjustContent);
-      </script>
+    </script>
   </body>
 </html>
