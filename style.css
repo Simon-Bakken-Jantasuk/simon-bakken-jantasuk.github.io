@@ -4,20 +4,6 @@ body {
   height: 100vh; 
 }
 
-.pdf-container {
-  width: 50%; 
-  height: 100%; 
-  position: relative; 
-}
-
-.pdf-container embed {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%; 
-  height: 100%; 
-}
-
 .image-container {
   width: 50%; 
   height: 100%; 
@@ -26,7 +12,22 @@ body {
   align-items: center; 
 }
 
-img {
-  max-width: 50%;
-  height: auto;
+.image-container img {
+  max-width: 50%; 
+  height: auto; 
+}
+
+.pdf-container {
+  width: 50%; 
+  height: 100%; 
+  position: relative; 
+}
+
+.pdf-container iframe {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  border: none; 
 }

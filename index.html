@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simon Bakken-Jantasuk</title>
+    <title>simon bakken-jantasuk</title>
     <link href="./style.css" rel="stylesheet">
   </head>
   <body>
     <div class="image-container">
-      <img id="randomImage" src="./images/elon0.png" alt="Random Image of Elon Musk">
+      <img id="randomimage" src="./images/elon0.png" title="random image of elon musk">
     </div>
     <div class="pdf-container">
-      <embed type="application/pdf" src="./resume.pdf" >
+      <iframe src="./resume.pdf" >
     </div>
     <script>
-      const imgEl = document.querySelector("#randomImage");
+      const imgel = document.queryselector("#randomimage");
 
       const images = [
         "./images/elon0.png",
@@ -23,12 +23,12 @@
       ];
 
       let index = 0 
-      const changeImage = () => {
+      const changeimage = () => {
         index = (index + 1) % images.length;
-        imgEl.src = images[index];
+        imgel.src = images[index];
       }
 
-      setInterval(changeImage, 3 * 10**3)
+      setinterval(changeimage, 1 * 10**3)
     </script>
   </body>
 </html>
