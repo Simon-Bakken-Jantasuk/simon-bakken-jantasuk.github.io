@@ -7,8 +7,28 @@
     <link href="./style.css" rel="stylesheet">
   </head>
   <body>
+    <div class="image-container">
+      <img id="randomImage" src="./images/elon0.png" alt="Random Image of Elon Musk">
+    </div>
     <div class="pdf-container">
       <embed type="application/pdf" src="./resume.pdf" >
     </div>
+    <script>
+      const imgEl = document.querySelector("#randomImage");
+
+      const images = [
+        "./images/elon0.png",
+        "./images/elon1.png",
+        "./images/elon2.png",
+      ];
+
+      let index = 0 
+      const changeImage = () => {
+        index = (index + 1) % images.length;
+        imgEl.src = images[index];
+      }
+
+      setInterval(changeImage, 3 * 10**3)
+    </script>
   </body>
 </html>
