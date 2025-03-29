@@ -12,22 +12,43 @@
     </div>
     <div class="pdf-container">
       <iframe src="./resume.pdf"></iframe>
-    <script>
-      const imgel = document.queryselector("#randomimage");
+      <a href="./resume.pdf" id="downloadLink" style="display: none;" download>Download Resume</a>
+      <script>
+        const imgel = document.queryselector("#randomimage");
 
-      const images = [
-        "./images/elon0.png",
-        "./images/elon1.png",
-        "./images/elon2.png",
-      ];
+        const images = [
+          "./images/elon0.png",
+          "./images/elon1.png",
+          "./images/elon2.png",
+        ];
 
-      let index = 0 
-      const changeimage = () => {
-        index = (index + 1) % images.length;
-        imgel.src = images[index];
-      }
+        let index = 0 
+        const changeimage = () => {
+          index = (index + 1) % images.length;
+          imgel.src = images[index];
+        }
 
-      setinterval(changeimage, 1 * 10**3)
-    </script>
+        setinterval(changeimage, 1 * 10**3)
+
+        const adjustContent = () => {
+          const pdfContainer = document.getElementById("pdfContainer");
+          const pdfIframe = document.getElementById("pdfIframe");
+          const downloadLink = document.getElementById("downloadLink");
+
+          if (window.innerWidth < 768) { // Mobile view
+            pdfContainer.style.flexDirection = "column";
+            pdfIframe.style.display = "none"; 
+            downloadLink.style.display = "block"; 
+          } else { 
+            pdfContainer.style.flexDirection = "row";
+            pdfIframe.style.display = "block"; 
+            downloadLink.style.display = "none"; 
+          }
+        }
+
+        adjustContent();
+
+        window.addEventListener('resize', adjustContent);
+      </script>
   </body>
 </html>

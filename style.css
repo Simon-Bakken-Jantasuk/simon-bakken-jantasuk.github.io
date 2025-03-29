@@ -21,6 +21,7 @@ body {
   width: 50%; 
   height: 100%; 
   position: relative; 
+  display: flex;
 }
 
 .pdf-container iframe {
